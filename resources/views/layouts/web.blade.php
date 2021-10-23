@@ -7,10 +7,16 @@
     <title>{{ env('APP_NAME') }} - @yield('title')</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    @include('includes.nav')
     @yield('content')
+    @include('includes.footer')
 
     <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>

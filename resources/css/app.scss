@@ -1,1 +1,9 @@
+$secondary: #BEBEBF;
+$dark: #433D39;
+$danger: #D56E2B;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.brand-style {
+  font-family: 'Catamaran', sans-serif;
+  color: $dark;
+}
