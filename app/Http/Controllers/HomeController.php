@@ -29,7 +29,7 @@ class HomeController extends Controller {
   }
 
   public function covid() {
-    return redirect(route('home.coming_soon'));
+    return view('home.covid');
   }
 
   public function comingSoon() {
