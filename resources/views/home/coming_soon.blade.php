@@ -1,6 +1,6 @@
 @extends('layouts.web')
 
-@section('title', 'Home')
+@section('title', 'Page Coming Soon')
 
 @section('content')
 <div class="container overflow-hidden">
