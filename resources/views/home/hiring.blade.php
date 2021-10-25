@@ -40,7 +40,7 @@
 			<div class="accordion-header" id="culture">
 			  <h5 class="mb-0">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#culture_collapse" aria-expanded="false" aria-controls="culture_collapse">
-				  Culture
+				 | Culture
 				</button>
 			  </h5>
 			</div>
@@ -54,7 +54,7 @@
 			<div class="accordion-header" id="values">
 			  <h5 class="mb-0">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#values_collapse" aria-expanded="false" aria-controls="values_collapse">
-				  Our Values
+				 | Our Values
 				</button>
 			  </h5>
 			</div>
@@ -68,7 +68,7 @@
 			<div class="accordion-header" id="benefits">
 			  <h5 class="mb-0">
 				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#benefits_collapse" aria-expanded="false" aria-controls="benefits_collapse">
-				  Benefits
+				  | Benefits
 				</button>
 			  </h5>
 			</div>
