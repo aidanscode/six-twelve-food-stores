@@ -13,7 +13,7 @@ class HomeController extends Controller {
   }
 
   public function contact() {
-    return redirect(route('home.coming_soon'));
+    return view('home.contact');
   }
 
   public function hiring() {

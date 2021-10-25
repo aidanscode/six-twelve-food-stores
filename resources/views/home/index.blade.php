@@ -8,10 +8,7 @@
   <div class="row section mt-4">
     <div class="col-12 col-md-6 offset-md-3">
       <h1 class="text-center fw-bold">
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
+        The new Meal Builder is here. Craft your perfect sandwhich, with only the freshest ingredients of course.
       </h1>
     </div>
   </div>
@@ -97,7 +94,7 @@
       <div class="col-12 col-md-6">
         <div class="bg-dark text-light p-3">
           <h3>Our Promise</h3>
-          <h5>We are committed to only serving fresh ingrediants from farms in our community.</h5>
+          <h5>We are committed to only serving fresh ingredients from farms in our community.</h5>
           <h3><a href="{{ route('home.fresh') }}" class="text-light">Learn more</a></h3>
         </div>
       </div>
