@@ -18,7 +18,13 @@
 
   {{-- Hero image --}}
   <img src="https://via.placeholder.com/1300x500" class="img-fluid section">
-
+  
+  {{-- Alerts --}}
+  <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+	6-12 is dedicated to ensuring the safety of all it's customers and employees.  <a href="{{ route('home.covid') }}" class="alert-link">Click here</a> for our updated mask policy.
+	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"/>
+  </div>
+  
   {{-- Simple Menu --}}
   <div id="menu" class="section">
     <div class="row gy-5">
@@ -33,7 +39,7 @@
       </div>
     </div>
   </div>
-
+  
   {{-- About --}}
   <div id="about" class="section">
     <div class="row">
