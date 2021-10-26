@@ -8,13 +8,16 @@
   <div class="row section mt-4">
     <div class="col-12 col-md-6 offset-md-3">
       <h1 class="text-center fw-bold">
-        The new Meal Builder is here. Craft your perfect sandwhich, with only the freshest ingredients of course.
+        The new Meal Builder is here. Craft your perfect sandwich, with only the freshest ingredients of course.
       </h1>
     </div>
   </div>
 
   {{-- Hero image --}}
-  <img src="https://via.placeholder.com/1300x500" class="img-fluid section">
+  <div class="text-center">
+	<img src="{{ asset('images\homebanner.png') }}" class="img-fluid section">
+  </div>
+ 
   
   {{-- Alerts --}}
   <div class="alert alert-secondary alert-dismissible fade show d-flex align-items-center" role="alert">
