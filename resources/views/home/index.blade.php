@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-12 col-md-6">
-        <img src="https://via.placeholder.com/500x600" class="img-fluid section float-end">
+        <img src="{{ asset('images\menu-promo-pic-cropped.jpg') }}" class="img-fluid section float-end">
       </div>
     </div>
   </div>
@@ -49,7 +49,25 @@
   <div id="about" class="section">
     <div class="row">
       <div class="col-12 col-md-6 order-2 order-md-1 text-center text-md-start">
-        <img src="https://via.placeholder.com/450x300" class="section">
+        <div id="carousel_about" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="{{ asset('images\carousel\Carousel1.jpg') }}">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="{{ asset('images\carousel\Carousel2.jpg') }}">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 h-100" src="{{ asset('images\carousel\Carousel3.png') }}">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carousel_about" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			</a>
+			<a class="carousel-control-next" href="#carousel_about" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			</a>
+		</div>
       </div>
       <div class="col-12 col-md-6 order-1 order-md-2">
         <h4>About</h4>
@@ -70,7 +88,7 @@
   {{-- Contact Us (Hero Image) --}}
   <div class="section">
     <div class="hero-container">
-      <img class="img-fluid p-0" src="https://via.placeholder.com/1300x500" />
+      <img class="img-fluid p-0" src="{{ asset('images\pan.png') }}" />
       <div class="hero-text text-center">
         <h2 class="text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
