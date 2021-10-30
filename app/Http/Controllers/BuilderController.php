@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 class BuilderController extends Controller {
 
   public function index() {
-    return redirect(route('home.coming_soon'));
+    return view('builder.meal-builder');
   }
 
 }
