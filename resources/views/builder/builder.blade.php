@@ -5,6 +5,7 @@
 @section('content')
 <div class="container overflow-hidden">
 	{{-- Builder --}}
-	
+
 	{{--Nutrition Facts--}}
 </div>
+@endsection

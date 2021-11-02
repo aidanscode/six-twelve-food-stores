@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 class BuilderController extends Controller {
 
   public function index() {
-    return view('builder.meal-builder');
+    return view('builder.builder');
   }
 
 }
