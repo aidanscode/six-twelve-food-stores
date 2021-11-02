@@ -54,3 +54,10 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.builder-section-box {
+  height: 550px;
+  min-height: 550px;
+  max-height: 550px;
+  overflow-y: scroll;
+}
