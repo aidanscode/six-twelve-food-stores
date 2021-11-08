@@ -61,3 +61,9 @@ html, body {
   max-height: 550px;
   overflow-y: scroll;
 }
+
+.clickable:hover {
+  font-weight: bold;
+  color: #0d95f0;
+  cursor: pointer;
+}

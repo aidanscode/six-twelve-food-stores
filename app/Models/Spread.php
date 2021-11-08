@@ -12,7 +12,7 @@ class Spread extends Model implements HasNiceClassName {
   use HasImagePath;
   use HasName;
 
-  protected $hidden = ['id', 'created_at', 'updated_at'];
+  protected $hidden = ['created_at', 'updated_at'];
 
   static function getNiceClassName() : string {
     return 'Spread';
