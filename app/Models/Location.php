@@ -20,7 +20,9 @@ class Location extends Model {
 
     foreach($ingredientLocationsByIngredientClass as $ingredientClass => $ingredientLocations) {
       $niceClassName = $ingredientClass::getNiceClassName();
-      $ingredients[$niceClassName] = $ingredientClass::findMany($ingredientLocations->pluck('ingredient_id'));
+      $ingredients[$niceClassName] = $ingredientClass::with('nutritionFacts')
+        ->whereIn('id', $ingredientLocations->pluck('ingredient_id'))
+        ->get();
     }
 
     return $ingredients;

@@ -8,7 +8,7 @@ function Page() {
 
   return <div className='row mb-5'>
     <BuilderBox menuSelections={menuSelections} setMenuSelections={setMenuSelections} />
-    <NutritionalFactsBox />
+    <NutritionalFactsBox menuSelections={menuSelections} />
   </div>
 }
 

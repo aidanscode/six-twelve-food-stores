@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\IngredientLocation;
-use App\Models\SandwichSize;
 use App\Models\Temperature;
 use App\Models\BreadType;
 use App\Models\Location;
@@ -17,7 +16,6 @@ class IngredientLocationSeeder extends Seeder {
 
   public function run() {
     $locations = Location::all();
-    $sandwichSizes = SandwichSize::all();
     $temperatures = Temperature::all();
     $breadTypes = BreadType::all();
     $toppings = Topping::all();
@@ -25,8 +23,7 @@ class IngredientLocationSeeder extends Seeder {
     $spreads = Spread::all();
     $meats = Meat::all();
 
-    $allIngredients = $sandwichSizes->concat($temperatures)
-      ->concat($breadTypes)
+    $allIngredients = $temperatures->concat($breadTypes)
       ->concat($toppings)
       ->concat($cheeses)
       ->concat($spreads)

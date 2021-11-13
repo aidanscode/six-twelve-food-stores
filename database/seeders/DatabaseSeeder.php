@@ -10,7 +10,6 @@ class DatabaseSeeder extends Seeder {
   public function run() {
     $this->call(LocationSeeder::class);
     $this->call(TemperatureSeeder::class);
-    $this->call(SandwichSizeSeeder::class);
     $this->call(BreadTypeSeeder::class);
     $this->call(MeatSeeder::class);
     $this->call(CheeseSeeder::class);

@@ -19,7 +19,7 @@ function Disclaimer({ acceptDisclaimer }) {
     <p>
       Allergen Disclaimer
       <br />
-      The following allergens are used or may be present in our food service area: peanuts, tree nuts, milk, soy, wheat, eggs, fish and shell fish. Customers with food allergies should be aware that 6-12 Food Stores uses the same utensils and equipment to prepare food and beverage products containing allergens as it uses to prepare food and beverages containing non-allergenic ingredients. Therefore, cross contact with allergens may occur. For more information, please click the Contact button on the top right of the page or connect with us through social media which is linked at the bottom of the page. You can also call us at (856) 225-6800.
+      The following allergens are used or may be present in our food service area: peanuts, tree nuts, milk, soy, wheat, eggs, fish and shell fish. Customers with food allergies should be aware that 6-12 Food Stores uses the same utensils and equipment to prepare food and beverage products containing allergens as it uses to prepare food and beverages containing non-allergenic ingredients. Therefore, cross contact with allergens may occur. For more information, please call us at (856) 225-6800.
     </p>
 
     <div className='text-center'>
