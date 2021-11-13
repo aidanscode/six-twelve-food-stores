@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
   const [menuStep, setMenuStep] = useState(0);
+  const [searchString, setSearchString] = useState('');
   const menuOrder = Object.keys(menuSelections);
   const menuSectionName = menuOrder[menuStep];
 
@@ -11,6 +12,7 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
       newSelections[menuSectionName] = ingredient;
       return newSelections;
     });
+    setSearchString('');
 
     if (menuStep + 1 === menuOrder.length) {
       done();
@@ -23,12 +25,32 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     setMenuStep(menuStep - 1);
   };
 
+  const search = (e) => {
+    const newSearchString = e.target.value.trim();
+    setSearchString(newSearchString);
+  };
+
+  const filteredIngredients = menu[menuSectionName].filter(ingredient => {
+    if (searchString.length)
+      return ingredient.name.toLowerCase().includes(searchString.toLowerCase());
+    else
+      return true;
+  });
+
   return <>
-    {(menuStep === 0) ? null : <button className='btn btn-dark mb-2' onClick={goBack}>Back to {menuOrder[menuStep - 1]}</button>}
+    <div className='row'>
+      <div className='col-12 col-md-4'>
+        {(menuStep === 0) ? null : <button className='btn btn-dark mb-2' onClick={goBack}>Back to {menuOrder[menuStep - 1]}</button>}
+      </div>
+      <div className='col-12 col-md-4 offset-md-4'>
+        <input type='text' className='form-control' placeholder='Search' onChange={search} value={searchString} />
+      </div>
+    </div>
+
     <h5>Select a {menuSectionName}</h5>
 
     <div className='row mt-3'>
-      {menu[menuSectionName].map((ingredient) => {
+      {filteredIngredients.map((ingredient) => {
         return <div key={ingredient.id} onClick={() => select(ingredient)} className='col-6 col-lg-4 text-center clickable'>
           <h1><i className="bi bi-egg-fried"></i></h1>
           <h4>{ingredient.name}</h4>
