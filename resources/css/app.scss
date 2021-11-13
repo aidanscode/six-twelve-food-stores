@@ -10,6 +10,7 @@ $light: #f8f9fa;
 $dark: #2e383c;
 $orange: #d56e2b;
 $secondaryLight: #bebebf;
+$link: #0d95f0;
 
 $theme-colors: (
   "primary":    $primary,
@@ -21,7 +22,8 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark,
   "orange":     $orange,
-  "secondary-light": $secondaryLight
+  "secondary-light": $secondaryLight,
+  "link": $link
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
@@ -64,6 +66,6 @@ html, body {
 
 .clickable:hover {
   font-weight: bold;
-  color: #0d95f0;
+  color: $link;
   cursor: pointer;
 }

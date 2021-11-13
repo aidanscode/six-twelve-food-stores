@@ -30,20 +30,32 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     setSearchString(newSearchString);
   };
 
-  const filteredIngredients = menu[menuSectionName].filter(ingredient => {
-    if (searchString.length)
-      return ingredient.name.toLowerCase().includes(searchString.toLowerCase());
-    else
-      return true;
-  }).filter(ingredient => {
-    if (menuSelections['Bread Type'] && menuSelections['Bread Type'].is_flat === 1) {
-      if (menuSectionName !== 'Bread Type' && Object.hasOwn(ingredient, 'is_flat'))
-        return ingredient.is_flat === 1;
+  const isIngredientSelected = ingredient => {
+    return menuSelections[menuSectionName] && menuSelections[menuSectionName].id === ingredient.id;
+  };
+
+  const getIngredientClasses = ingredient => {
+    let baseClasses = 'col-6 col-lg-4 text-center clickable';
+    if (isIngredientSelected(ingredient))
+      baseClasses += ' text-link';
+    return baseClasses;
+  }
+
+  const filteredIngredients = menu[menuSectionName]
+    .filter(ingredient => {
+      if (searchString.length)
+        return ingredient.name.toLowerCase().includes(searchString.toLowerCase());
       else
-        return 1;
-    } else
-      return true;
-  });
+        return true;
+    }).filter(ingredient => {
+      if (menuSelections['Bread Type'] && menuSelections['Bread Type'].is_flat === 1) {
+        if (menuSectionName !== 'Bread Type' && Object.hasOwn(ingredient, 'is_flat'))
+          return ingredient.is_flat === 1;
+        else
+          return 1;
+      } else
+        return true;
+    });
 
   return <>
     <div className='row'>
@@ -59,7 +71,7 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
 
     <div className='row mt-3'>
       {filteredIngredients.map((ingredient) => {
-        return <div key={ingredient.id} onClick={() => select(ingredient)} className='col-6 col-lg-4 text-center clickable'>
+        return <div key={ingredient.id} onClick={() => select(ingredient)} className={getIngredientClasses(ingredient)}>
           <h1><i className="bi bi-egg-fried"></i></h1>
           <h4>{ingredient.name}</h4>
         </div>
