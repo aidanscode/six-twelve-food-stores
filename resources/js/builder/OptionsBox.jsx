@@ -7,31 +7,46 @@ import Complete from './views/Complete';
 import MenuUtils from './MenuUtils';
 
 function OptionsBox({ menuSelections, setMenuSelections }) {
-  const restart = () => {
-    setMenuSelections(MenuUtils.getDefaultMenu());
-    showLocationsView();
-  };
-  const showLocationsView = () => setCurrentView(<Locations selectLocation={selectLocation} />);
-  const finishedBuilding = () => setCurrentView(<Complete restart={restart} />);
-  const selectLocation = async location => {
-    setCurrentView(<LoadingMenu />);
+  const [currentViewMode, setCurrentViewMode] = useState('disclaimer');
+  const [menu, setMenu] = useState(null);
 
-    const menuResponse = await axios.get(location.menu_url);
-    setCurrentView(
-      <MenuSelection
-        menu={menuResponse.data.menu}
+  const getCurrentView = () => {
+    if (currentViewMode === 'disclaimer') {
+      return <Disclaimer acceptDisclaimer={showLocationsView} />;
+    } else if (currentViewMode === 'locations') {
+      return <Locations selectLocation={selectLocation} />;
+    } else if (currentViewMode === 'complete') {
+      return <Complete restart={restart} />;
+    } else if (currentViewMode === 'loadingMenu') {
+      return <LoadingMenu />;
+    } else if (currentViewMode === 'menuSelection') {
+      return <MenuSelection
+        menu={menu}
         menuSelections={menuSelections}
         setMenuSelections={setMenuSelections}
         done={finishedBuilding}
       />
-    );
+    }
   };
-  const [currentView, setCurrentView] = useState(<Disclaimer acceptDisclaimer={showLocationsView} />);
+
+  const restart = () => {
+    setMenuSelections(MenuUtils.getDefaultMenu());
+    showLocationsView();
+  };
+  const showLocationsView = () => setCurrentViewMode('locations');
+  const finishedBuilding = () => setCurrentViewMode('complete');
+  const selectLocation = async location => {
+    setCurrentViewMode('loadingMenu');
+
+    const menuResponse = await axios.get(location.menu_url);
+    setMenu(menuResponse.data.menu);
+    setCurrentViewMode('menuSelection');
+  };
 
   return <div className='col-12 col-lg-9'>
     <div className='builder-section-box w-100 bg-white'>
       <div className='container my-3'>
-        {currentView}
+        {getCurrentView()}
       </div>
     </div>
   </div>

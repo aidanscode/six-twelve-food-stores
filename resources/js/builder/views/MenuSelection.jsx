@@ -35,6 +35,14 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
       return ingredient.name.toLowerCase().includes(searchString.toLowerCase());
     else
       return true;
+  }).filter(ingredient => {
+    if (menuSelections['Bread Type'] && menuSelections['Bread Type'].is_flat === 1) {
+      if (menuSectionName !== 'Bread Type' && Object.hasOwn(ingredient, 'is_flat'))
+        return ingredient.is_flat === 1;
+      else
+        return 1;
+    } else
+      return true;
   });
 
   return <>
