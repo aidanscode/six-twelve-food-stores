@@ -4,10 +4,15 @@ import LoadingMenu from './views/LoadingMenu';
 import Disclaimer from './views/Disclaimer';
 import Locations from './views/Locations';
 import Complete from './views/Complete';
+import MenuUtils from './MenuUtils';
 
 function OptionsBox({ menuSelections, setMenuSelections }) {
+  const restart = () => {
+    setMenuSelections(MenuUtils.getDefaultMenu());
+    showLocationsView();
+  };
   const showLocationsView = () => setCurrentView(<Locations selectLocation={selectLocation} />);
-  const finishedBuilding = () => setCurrentView(<Complete />);
+  const finishedBuilding = () => setCurrentView(<Complete restart={restart} />);
   const selectLocation = async location => {
     setCurrentView(<LoadingMenu />);
 

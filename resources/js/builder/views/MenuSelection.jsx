@@ -19,7 +19,12 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     }
   }
 
+  const goBack = () => {
+    setMenuStep(menuStep - 1);
+  };
+
   return <>
+    {(menuStep === 0) ? null : <button className='btn btn-dark mb-2' onClick={goBack}>Back to {menuOrder[menuStep - 1]}</button>}
     <h5>Select a {menuSectionName}</h5>
 
     <div className='row mt-3'>
