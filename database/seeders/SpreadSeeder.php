@@ -3,19 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\Spread;
+use App\Models\Ingredient;
 
 class SpreadSeeder extends Seeder {
 
   public function run() {
-    $mayo = Spread::create([
+    $mayo = Ingredient::create([
       'name' => 'Mayo',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $mayo->id,
-      'ingredient_class' => Spread::class,
       'calories' => 150,
       'total_fat' => 18,
       'saturated_fat' => 3,
@@ -32,13 +34,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $oil = Spread::create([
+    $oil = Ingredient::create([
       'name' => 'Oil',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $oil->id,
-      'ingredient_class' => Spread::class,
       'calories' => 150,
       'total_fat' => 18,
       'saturated_fat' => 3,
@@ -55,13 +58,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $ranchDressing = Spread::create([
+    $ranchDressing = Ingredient::create([
       'name' => 'Ranch Dressing',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $ranchDressing->id,
-      'ingredient_class' => Spread::class,
       'calories' => 250,
       'total_fat' => 25,
       'saturated_fat' => 4,
@@ -78,13 +82,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $buffaloSauce = Spread::create([
+    $buffaloSauce = Ingredient::create([
       'name' => 'Buffalo Sauce',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $buffaloSauce->id,
-      'ingredient_class' => Spread::class,
       'calories' => 110,
       'total_fat' => 11,
       'saturated_fat' => 2,
@@ -101,13 +106,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $creamyChipotle = Spread::create([
+    $creamyChipotle = Ingredient::create([
       'name' => 'Creamy Chipotle',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $creamyChipotle->id,
-      'ingredient_class' => Spread::class,
       'calories' => 210,
       'total_fat' => 21,
       'saturated_fat' => 3,
@@ -124,13 +130,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $miracleWhip = Spread::create([
+    $miracleWhip = Ingredient::create([
       'name' => 'Miracle Whip',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $miracleWhip->id,
-      'ingredient_class' => Spread::class,
       'calories' => 140,
       'total_fat' => 11,
       'saturated_fat' => 2,
@@ -147,13 +154,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $spicyMustard = Spread::create([
+    $spicyMustard = Ingredient::create([
       'name' => 'Spicy Mustard',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $spicyMustard->id,
-      'ingredient_class' => Spread::class,
       'calories' => 50,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -170,13 +178,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 1
     ]);
 
-    $yellowMustard = Spread::create([
+    $yellowMustard = Ingredient::create([
       'name' => 'Yellow Mustard',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $yellowMustard->id,
-      'ingredient_class' => Spread::class,
       'calories' => 20,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -193,13 +202,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $ketchup = Spread::create([
+    $ketchup = Ingredient::create([
       'name' => 'Ketchup',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $ketchup->id,
-      'ingredient_class' => Spread::class,
       'calories' => 60,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -216,13 +226,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $bbqSauce = Spread::create([
+    $bbqSauce = Ingredient::create([
       'name' => 'BBQ Sauce',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $bbqSauce->id,
-      'ingredient_class' => Spread::class,
       'calories' => 110,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -239,13 +250,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $garlicAioli = Spread::create([
+    $garlicAioli = Ingredient::create([
       'name' => 'Garlic Aioli',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $garlicAioli->id,
-      'ingredient_class' => Spread::class,
       'calories' => 130,
       'total_fat' => 15,
       'saturated_fat' => 2.5,
@@ -262,13 +274,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $honeyHotSauce = Spread::create([
+    $honeyHotSauce = Ingredient::create([
       'name' => 'Honey Hot Sauce',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $honeyHotSauce->id,
-      'ingredient_class' => Spread::class,
       'calories' => 90,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -285,13 +298,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $honeyMustardSauce = Spread::create([
+    $honeyMustardSauce = Ingredient::create([
       'name' => 'Honey Mustard Sauce',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $honeyMustardSauce->id,
-      'ingredient_class' => Spread::class,
       'calories' => 90,
       'total_fat' => 9,
       'saturated_fat' => 0,
@@ -308,13 +322,14 @@ class SpreadSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $cherryPepperRelish = Spread::create([
+    $cherryPepperRelish = Ingredient::create([
       'name' => 'Cherry Pepper Relish',
+      'ingredient_type_id' => IngredientType::TYPE_SPREAD,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $cherryPepperRelish->id,
-      'ingredient_class' => Spread::class,
       'calories' => 10,
       'total_fat' => 0,
       'saturated_fat' => 0,

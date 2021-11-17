@@ -3,19 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\Cheese;
+use App\Models\Ingredient;
 
 class CheeseSeeder extends Seeder {
 
   public function run() {
-    $no = Cheese::create([
+    $no = Ingredient::create([
       'name' => 'No Cheese',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $no->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -32,13 +34,14 @@ class CheeseSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $cheddar = Cheese::create([
+    $cheddar = Ingredient::create([
       'name' => 'Cheddar',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $cheddar->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 180,
       'total_fat' => 14,
       'saturated_fat' => 8,
@@ -55,13 +58,14 @@ class CheeseSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $american = Cheese::create([
+    $american = Ingredient::create([
       'name' => 'American',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $american->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 150,
       'total_fat' => 14,
       'saturated_fat' => 8,
@@ -78,13 +82,14 @@ class CheeseSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $provolone = Cheese::create([
+    $provolone = Ingredient::create([
       'name' => 'Provolone',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $provolone->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 150,
       'total_fat' => 14,
       'saturated_fat' => 6,
@@ -101,13 +106,14 @@ class CheeseSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $swiss = Cheese::create([
+    $swiss = Ingredient::create([
       'name' => 'Swiss',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $swiss->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 180,
       'total_fat' => 12,
       'saturated_fat' => 8,
@@ -124,13 +130,14 @@ class CheeseSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $pepperJack = Cheese::create([
+    $pepperJack = Ingredient::create([
       'name' => 'Pepper Jack',
+      'ingredient_type_id' => IngredientType::TYPE_CHEESE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $pepperJack->id,
-      'ingredient_class' => Cheese::class,
       'calories' => 150,
       'total_fat' => 12,
       'saturated_fat' => 8,

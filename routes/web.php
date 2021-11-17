@@ -14,3 +14,5 @@ Route::get('/covid', [HomeController::class, 'covid'])->name('home.covid');
 Route::get('/coming_soon', [HomeController::class, 'comingSoon'])->name('home.coming_soon');
 
 Route::get('/builder', [BuilderController::class, 'index'])->name('builder.index');
+
+Route::get('/ingredient/{id}/photo', [IngredientController::class, 'ingredient'])->name('ingredient.photo');

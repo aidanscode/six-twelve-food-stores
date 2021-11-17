@@ -10,7 +10,6 @@ class CreateNutritionFactsTable extends Migration {
     Schema::create('nutrition_facts', function (Blueprint $table) {
       $table->id();
       $table->foreignId('ingredient_id');
-      $table->string('ingredient_class');
       $table->unsignedInteger('calories');
       $table->unsignedInteger('total_fat');
       $table->unsignedInteger('saturated_fat');
@@ -26,6 +25,8 @@ class CreateNutritionFactsTable extends Migration {
       $table->unsignedInteger('calcium');
       $table->unsignedInteger('iron');
       $table->timestamps();
+
+      $table->foreign('ingredient_id')->references('id')->on('ingredients');
     });
   }
 

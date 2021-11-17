@@ -3,24 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\Meat;
+use App\Models\Ingredient;
 
 class MeatSeeder extends Seeder {
 
   public function run() {
-    $flatMeats = [
-      'Meatball (NOT FLAT)'
-    ];
-
-    $ham = Meat::create([
+    $ham = Ingredient::create([
       'name' => 'Ham',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $ham->id,
-      'ingredient_class' => Meat::class,
       'calories' => 150,
       'total_fat' => 5,
       'saturated_fat' => 3,
@@ -37,14 +34,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $turkey = Meat::create([
+    $turkey = Ingredient::create([
       'name' => 'Turkey',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $turkey->id,
-      'ingredient_class' => Meat::class,
       'calories' => 150,
       'total_fat' => 3,
       'saturated_fat' => 0,
@@ -61,14 +58,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $italian = Meat::create([
+    $italian = Ingredient::create([
       'name' => 'Italian',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $italian->id,
-      'ingredient_class' => Meat::class,
       'calories' => 270,
       'total_fat' => 18,
       'saturated_fat' => 6,
@@ -85,14 +82,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $chickenSalad = Meat::create([
+    $chickenSalad = Ingredient::create([
       'name' => 'Chicken Salad',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $chickenSalad->id,
-      'ingredient_class' => Meat::class,
       'calories' => 360,
       'total_fat' => 27,
       'saturated_fat' => 5,
@@ -109,14 +106,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $blt = Meat::create([
+    $blt = Ingredient::create([
       'name' => 'BLT',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $blt->id,
-      'ingredient_class' => Meat::class,
       'calories' => 300,
       'total_fat' => 24,
       'saturated_fat' => 9,
@@ -133,14 +130,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $cheese = Meat::create([
+    $cheese = Ingredient::create([
       'name' => 'Cheese',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $cheese->id,
-      'ingredient_class' => Meat::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -157,14 +154,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $pepperoni = Meat::create([
+    $pepperoni = Ingredient::create([
       'name' => 'Pepperoni',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $pepperoni->id,
-      'ingredient_class' => Meat::class,
       'calories' => 540,
       'total_fat' => 48,
       'saturated_fat' => 18,
@@ -181,14 +178,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $veggie = Meat::create([
+    $veggie = Ingredient::create([
       'name' => 'Veggie',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $veggie->id,
-      'ingredient_class' => Meat::class,
       'calories' => 80,
       'total_fat' => 6,
       'saturated_fat' => 0,
@@ -205,14 +202,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $chickenStrips = Meat::create([
+    $chickenStrips = Ingredient::create([
       'name' => 'Chicken Strips',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $chickenStrips->id,
-      'ingredient_class' => Meat::class,
       'calories' => 180,
       'total_fat' => 4,
       'saturated_fat' => 2,
@@ -229,14 +226,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $beefSteak = Meat::create([
+    $beefSteak = Ingredient::create([
       'name' => 'Beef Steak',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $beefSteak->id,
-      'ingredient_class' => Meat::class,
       'calories' => 270,
       'total_fat' => 18,
       'saturated_fat' => 8,
@@ -253,14 +250,14 @@ class MeatSeeder extends Seeder {
       'iron' => 8
     ]);
 
-    $grilledChicken = Meat::create([
+    $grilledChicken = Ingredient::create([
       'name' => 'Grilled Chicken',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $grilledChicken->id,
-      'ingredient_class' => Meat::class,
       'calories' => 270,
       'total_fat' => 5,
       'saturated_fat' => 3,
@@ -277,14 +274,14 @@ class MeatSeeder extends Seeder {
       'iron' => 8
     ]);
 
-    $chickenSteak = Meat::create([
+    $chickenSteak = Ingredient::create([
       'name' => 'Chicken Steak',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 1
     ]);
     NutritionFact::create([
       'ingredient_id' => $chickenSteak->id,
-      'ingredient_class' => Meat::class,
       'calories' => 180,
       'total_fat' => 8,
       'saturated_fat' => 3,
@@ -301,14 +298,14 @@ class MeatSeeder extends Seeder {
       'iron' => 0.5
     ]);
 
-    $meatball = Meat::create([
+    $meatball = Ingredient::create([
       'name' => 'Meatball',
+      'ingredient_type_id' => IngredientType::TYPE_MEAT,
       'image_path' => '',
       'is_flat' => 0
     ]);
     NutritionFact::create([
       'ingredient_id' => $meatball->id,
-      'ingredient_class' => Meat::class,
       'calories' => 720,
       'total_fat' => 57,
       'saturated_fat' => 18,

@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\IngredientLocation;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
 
   public function run() {
+    $this->call(IngredientTypesSeeder::class);
     $this->call(LocationSeeder::class);
     $this->call(TemperatureSeeder::class);
     $this->call(BreadTypeSeeder::class);

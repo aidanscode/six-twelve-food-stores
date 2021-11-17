@@ -10,10 +10,10 @@ class CreateIngredientLocationTable extends Migration {
     Schema::create('ingredient_location', function (Blueprint $table) {
       $table->id();
       $table->foreignId('ingredient_id');
-      $table->string('ingredient_class');
       $table->foreignId('location_id');
       $table->timestamps();
 
+      $table->foreign('ingredient_id')->references('id')->on('ingredients');
       $table->foreign('location_id')->references('id')->on('locations');
     });
   }

@@ -3,19 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\Temperature;
+use App\Models\Ingredient;
 
 class TemperatureSeeder extends Seeder {
 
   public function run() {
-    $cold = Temperature::create([
+    $cold = Ingredient::create([
       'name' => 'Cold',
+      'ingredient_type_id' => IngredientType::TYPE_TEMPERATURE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $cold->id,
-      'ingredient_class' => Temperature::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -32,13 +34,14 @@ class TemperatureSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $toasted = Temperature::create([
+    $toasted = Ingredient::create([
       'name' => 'Toasted',
+      'ingredient_type_id' => IngredientType::TYPE_TEMPERATURE,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $toasted->id,
-      'ingredient_class' => Temperature::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,

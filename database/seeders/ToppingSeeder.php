@@ -3,23 +3,21 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\Topping;
+use App\Models\Ingredient;
 
 class ToppingSeeder extends Seeder {
 
   public function run() {
-    $toppings = [
-      'Oregano'
-    ];
-
-    $lettuce = Topping::create([
+    $lettuce = Ingredient::create([
       'name' => 'Lettuce',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $lettuce->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -36,13 +34,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $tomato = Topping::create([
+    $tomato = Ingredient::create([
       'name' => 'Tomato',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $tomato->id,
-      'ingredient_class' => Topping::class,
       'calories' => 20,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -59,13 +58,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $onion = Topping::create([
+    $onion = Ingredient::create([
       'name' => 'Onion',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $onion->id,
-      'ingredient_class' => Topping::class,
       'calories' => 20,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -82,13 +82,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $pickles = Topping::create([
+    $pickles = Ingredient::create([
       'name' => 'Pickles',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $pickles->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -105,13 +106,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $sweetPeppers = Topping::create([
+    $sweetPeppers = Ingredient::create([
       'name' => 'Sweet Peppers',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $sweetPeppers->id,
-      'ingredient_class' => Topping::class,
       'calories' => 50,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -128,13 +130,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $hotPeppers = Topping::create([
+    $hotPeppers = Ingredient::create([
       'name' => 'Hot Peppers',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $hotPeppers->id,
-      'ingredient_class' => Topping::class,
       'calories' => 20,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -151,13 +154,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $cucumbers = Topping::create([
+    $cucumbers = Ingredient::create([
       'name' => 'Cucumbers',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $cucumbers->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -174,13 +178,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $jalapenoPeppers = Topping::create([
+    $jalapenoPeppers = Ingredient::create([
       'name' => 'Jalapeno Peppers',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $jalapenoPeppers->id,
-      'ingredient_class' => Topping::class,
       'calories' => 20,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -197,13 +202,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $gratedParmesan = Topping::create([
+    $gratedParmesan = Ingredient::create([
       'name' => 'Grated Parmesan',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $gratedParmesan->id,
-      'ingredient_class' => Topping::class,
       'calories' => 80,
       'total_fat' => 5,
       'saturated_fat' => 3,
@@ -220,13 +226,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $salt = Topping::create([
+    $salt = Ingredient::create([
       'name' => 'Salt',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $salt->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -243,13 +250,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $pepper = Topping::create([
+    $pepper = Ingredient::create([
       'name' => 'Pepper',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $pepper->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -266,13 +274,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $oldBay = Topping::create([
+    $oldBay = Ingredient::create([
       'name' => 'Old Bay',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $oldBay->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,
@@ -289,13 +298,14 @@ class ToppingSeeder extends Seeder {
       'iron' => 0
     ]);
 
-    $oregano = Topping::create([
+    $oregano = Ingredient::create([
       'name' => 'Oregano',
+      'ingredient_type_id' => IngredientType::TYPE_TOPPING,
+      'is_flat' => true,
       'image_path' => ''
     ]);
     NutritionFact::create([
       'ingredient_id' => $oregano->id,
-      'ingredient_class' => Topping::class,
       'calories' => 0,
       'total_fat' => 0,
       'saturated_fat' => 0,

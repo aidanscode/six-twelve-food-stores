@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\IngredientType;
 use App\Models\NutritionFact;
-use App\Models\BreadType;
+use App\Models\Ingredient;
 
 class BreadTypeSeeder extends Seeder {
 
@@ -13,8 +14,9 @@ class BreadTypeSeeder extends Seeder {
 
     //White breads
     $sizes->each(function(string $sizeString, int $index) {
-      $white = BreadType::create([
+      $white = Ingredient::create([
         'name' => 'White ' . $sizeString,
+        'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
         'image_path' => '',
         'is_flat' => false
       ]);
@@ -22,7 +24,6 @@ class BreadTypeSeeder extends Seeder {
 
       NutritionFact::create([
         'ingredient_id' => $white->id,
-        'ingredient_class' => BreadType::class,
         'calories' => $this->adjustForSize(350, $sizeMultiplier),
         'total_fat' => $this->adjustForSize(3, $sizeMultiplier),
         'saturated_fat' => $this->adjustForSize(0, $sizeMultiplier),
@@ -42,15 +43,15 @@ class BreadTypeSeeder extends Seeder {
 
     //Wheat breads
     $sizes->each(function(string $sizeString, int $index) {
-      $wheat = BreadType::create([
+      $wheat = Ingredient::create([
         'name' => 'Wheat ' . $sizeString,
+        'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
         'image_path' => '',
         'is_flat' => false
       ]);
       $sizeMultiplier = $this->getSizeMultiplier($index);
       NutritionFact::create([
         'ingredient_id' => $wheat->id,
-        'ingredient_class' => BreadType::class,
         'calories' => $this->adjustForSize(360, $sizeMultiplier),
         'total_fat' => $this->adjustForSize(4, $sizeMultiplier),
         'saturated_fat' => $this->adjustForSize(0.5, $sizeMultiplier),
@@ -70,15 +71,15 @@ class BreadTypeSeeder extends Seeder {
 
     //Flat breads
     $sizes->each(function(string $sizeString, int $index) {
-      $flat = BreadType::create([
+      $flat = Ingredient::create([
         'name' => 'Flat ' . $sizeString,
+        'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
         'image_path' => '',
         'is_flat' => true
       ]);
       $sizeMultiplier = $this->getSizeMultiplier($index);
       NutritionFact::create([
         'ingredient_id' => $flat->id,
-        'ingredient_class' => BreadType::class,
         'calories' => $this->adjustForSize(390, $sizeMultiplier),
         'total_fat' => $this->adjustForSize(6, $sizeMultiplier),
         'saturated_fat' => $this->adjustForSize(0, $sizeMultiplier),
