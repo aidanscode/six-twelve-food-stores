@@ -14,7 +14,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'No Cheese',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/circle_with_cross.png'
     ]);
     NutritionFact::create([
       'ingredient_id' => $no->id,
@@ -38,7 +38,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'Cheddar',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/cheddar.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $cheddar->id,
@@ -62,7 +62,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'American',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/american.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $american->id,
@@ -86,7 +86,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'Provolone',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/provolone.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $provolone->id,
@@ -110,7 +110,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'Swiss',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/swiss.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $swiss->id,
@@ -134,7 +134,7 @@ class CheeseSeeder extends Seeder {
       'name' => 'Pepper Jack',
       'ingredient_type_id' => IngredientType::TYPE_CHEESE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/pepper_jack.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $pepperJack->id,

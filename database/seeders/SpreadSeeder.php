@@ -14,7 +14,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Mayo',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/mayo.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $mayo->id,
@@ -38,7 +38,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Oil',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/oil.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $oil->id,
@@ -62,7 +62,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Ranch Dressing',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/ranch.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $ranchDressing->id,
@@ -86,7 +86,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Buffalo Sauce',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/buffalo.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $buffaloSauce->id,
@@ -110,7 +110,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Creamy Chipotle',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/chipotle.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $creamyChipotle->id,
@@ -134,7 +134,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Miracle Whip',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/miracle_whip.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $miracleWhip->id,
@@ -158,7 +158,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Spicy Mustard',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/spicy_mustard.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $spicyMustard->id,
@@ -182,7 +182,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Yellow Mustard',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/yellow_mustard.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $yellowMustard->id,
@@ -206,7 +206,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Ketchup',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/ketchup.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $ketchup->id,
@@ -230,7 +230,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'BBQ Sauce',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/bbq_sauce.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $bbqSauce->id,
@@ -254,7 +254,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Garlic Aioli',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/garlic_aioli.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $garlicAioli->id,
@@ -278,7 +278,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Honey Hot Sauce',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/honey_mustard.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $honeyHotSauce->id,
@@ -302,7 +302,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Honey Mustard Sauce',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/honey_mustard.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $honeyMustardSauce->id,
@@ -326,7 +326,7 @@ class SpreadSeeder extends Seeder {
       'name' => 'Cherry Pepper Relish',
       'ingredient_type_id' => IngredientType::TYPE_SPREAD,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images/ingredients/default/pepper_relish.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $cherryPepperRelish->id,

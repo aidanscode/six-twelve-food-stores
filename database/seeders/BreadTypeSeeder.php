@@ -10,17 +10,21 @@ use App\Models\Ingredient;
 class BreadTypeSeeder extends Seeder {
 
   public function run() {
-    $sizes = collect(['Small (8 in)', 'Medium (12 in)', 'Large (18 in)']);
+    $sizes = collect([
+      ['name' => 'Small (8 in)', 'multiplier' => 2/3, 'path' => 'images\ingredients\default\bread_small.jpg'],
+      ['name' => 'Medium (12 in)', 'multiplier' => 1, 'path' => 'images\ingredients\default\bread_medium.jpg'],
+      ['name' => 'Small (8 in)', 'multiplier' => 3/2, 'path' => 'images\ingredients\default\bread_large.jpg'],
+    ]);
 
     //White breads
-    $sizes->each(function(string $sizeString, int $index) {
+    $sizes->each(function(array $size) {
       $white = Ingredient::create([
-        'name' => 'White ' . $sizeString,
+        'name' => 'White ' . $size['name'],
         'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
-        'image_path' => '',
+        'image_path' => $size['path'],
         'is_flat' => false
       ]);
-      $sizeMultiplier = $this->getSizeMultiplier($index);
+      $sizeMultiplier = $size['multiplier'];
 
       NutritionFact::create([
         'ingredient_id' => $white->id,
@@ -42,14 +46,14 @@ class BreadTypeSeeder extends Seeder {
     });
 
     //Wheat breads
-    $sizes->each(function(string $sizeString, int $index) {
+    $sizes->each(function(array $size) {
       $wheat = Ingredient::create([
-        'name' => 'Wheat ' . $sizeString,
+        'name' => 'Wheat ' . $size['name'],
         'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
-        'image_path' => '',
+        'image_path' => $size['path'],
         'is_flat' => false
       ]);
-      $sizeMultiplier = $this->getSizeMultiplier($index);
+      $sizeMultiplier = $size['multiplier'];
       NutritionFact::create([
         'ingredient_id' => $wheat->id,
         'calories' => $this->adjustForSize(360, $sizeMultiplier),
@@ -70,14 +74,14 @@ class BreadTypeSeeder extends Seeder {
     });
 
     //Flat breads
-    $sizes->each(function(string $sizeString, int $index) {
+    $sizes->each(function(array $size) {
       $flat = Ingredient::create([
-        'name' => 'Flat ' . $sizeString,
+        'name' => 'Flat ' . $size['name'],
         'ingredient_type_id' => IngredientType::TYPE_BREAD_TYPE,
-        'image_path' => '',
+        'image_path' => $size['path'],
         'is_flat' => true
       ]);
-      $sizeMultiplier = $this->getSizeMultiplier($index);
+      $sizeMultiplier = $size['multiplier'];
       NutritionFact::create([
         'ingredient_id' => $flat->id,
         'calories' => $this->adjustForSize(390, $sizeMultiplier),
@@ -96,15 +100,6 @@ class BreadTypeSeeder extends Seeder {
         'iron' => $this->adjustForSize(1.3, $sizeMultiplier)
       ]);
     });
-  }
-
-  private function getSizeMultiplier(int $size) : float {
-    if ($size === 0)
-      return 2/3;
-    elseif ($size === 1)
-      return 1;
-    elseif ($size === 2)
-      return 3/2;
   }
 
   private function adjustForSize(int $value, float $multiplier) : int {

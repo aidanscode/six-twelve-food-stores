@@ -14,7 +14,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Lettuce',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\lettuce.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $lettuce->id,
@@ -38,7 +38,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Tomato',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\tomato.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $tomato->id,
@@ -62,7 +62,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Onion',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\onions.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $onion->id,
@@ -86,7 +86,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Pickles',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\pickles.png'
     ]);
     NutritionFact::create([
       'ingredient_id' => $pickles->id,
@@ -110,7 +110,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Sweet Peppers',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\sweet_peppers.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $sweetPeppers->id,
@@ -134,7 +134,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Hot Peppers',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\hot_peppers.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $hotPeppers->id,
@@ -158,7 +158,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Cucumbers',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\cucumbers.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $cucumbers->id,
@@ -182,7 +182,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Jalapeno Peppers',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\jalapenos.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $jalapenoPeppers->id,
@@ -206,7 +206,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Grated Parmesan',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\grated_parmesan.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $gratedParmesan->id,
@@ -230,7 +230,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Salt',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\salt.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $salt->id,
@@ -254,7 +254,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Pepper',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\pepper.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $pepper->id,
@@ -278,7 +278,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Old Bay',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\old_bay.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $oldBay->id,
@@ -302,7 +302,7 @@ class ToppingSeeder extends Seeder {
       'name' => 'Oregano',
       'ingredient_type_id' => IngredientType::TYPE_TOPPING,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\oregano.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $oregano->id,

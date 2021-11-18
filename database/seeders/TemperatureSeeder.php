@@ -14,7 +14,7 @@ class TemperatureSeeder extends Seeder {
       'name' => 'Cold',
       'ingredient_type_id' => IngredientType::TYPE_TEMPERATURE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\white_bread.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $cold->id,
@@ -38,7 +38,7 @@ class TemperatureSeeder extends Seeder {
       'name' => 'Toasted',
       'ingredient_type_id' => IngredientType::TYPE_TEMPERATURE,
       'is_flat' => true,
-      'image_path' => ''
+      'image_path' => 'images\ingredients\default\wheat_bread.jpg'
     ]);
     NutritionFact::create([
       'ingredient_id' => $toasted->id,

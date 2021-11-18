@@ -72,7 +72,7 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     <div className='row mt-3'>
       {filteredIngredients.map((ingredient) => {
         return <div key={ingredient.id} onClick={() => select(ingredient)} className={getIngredientClasses(ingredient)}>
-          <h1><i className="bi bi-egg-fried"></i></h1>
+          <img className='img-fluid' src={ingredient.image_url} />
           <h4>{ingredient.name}</h4>
         </div>
       })}

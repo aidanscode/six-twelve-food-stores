@@ -38,8 +38,8 @@ function OptionsBox({ menuSelections, setMenuSelections }) {
   const selectLocation = async location => {
     setCurrentViewMode('loadingMenu');
 
-    const menuResponse = await axios.get(location.menu_url);
-    setMenu(menuResponse.data.menu);
+    const response = await axios.get(location.menu_url);
+    setMenu(response.data.menu);
     setCurrentViewMode('menuSelection');
   };
 

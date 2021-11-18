@@ -13,7 +13,7 @@ class MeatSeeder extends Seeder {
     $ham = Ingredient::create([
       'name' => 'Ham',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\ham.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -37,7 +37,7 @@ class MeatSeeder extends Seeder {
     $turkey = Ingredient::create([
       'name' => 'Turkey',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\turkey.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -61,7 +61,7 @@ class MeatSeeder extends Seeder {
     $italian = Ingredient::create([
       'name' => 'Italian',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\italian.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -85,7 +85,7 @@ class MeatSeeder extends Seeder {
     $chickenSalad = Ingredient::create([
       'name' => 'Chicken Salad',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\chicken_salad.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -109,7 +109,7 @@ class MeatSeeder extends Seeder {
     $blt = Ingredient::create([
       'name' => 'BLT',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\blt.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -133,7 +133,7 @@ class MeatSeeder extends Seeder {
     $cheese = Ingredient::create([
       'name' => 'Cheese',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\cheese.png',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -157,7 +157,7 @@ class MeatSeeder extends Seeder {
     $pepperoni = Ingredient::create([
       'name' => 'Pepperoni',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\pepperoni.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -181,7 +181,7 @@ class MeatSeeder extends Seeder {
     $veggie = Ingredient::create([
       'name' => 'Veggie',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\veggie.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -205,7 +205,7 @@ class MeatSeeder extends Seeder {
     $chickenStrips = Ingredient::create([
       'name' => 'Chicken Strips',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\chicken_strips.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -229,7 +229,7 @@ class MeatSeeder extends Seeder {
     $beefSteak = Ingredient::create([
       'name' => 'Beef Steak',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\beefsteak.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -253,7 +253,7 @@ class MeatSeeder extends Seeder {
     $grilledChicken = Ingredient::create([
       'name' => 'Grilled Chicken',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\grilled_chicken.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -277,7 +277,7 @@ class MeatSeeder extends Seeder {
     $chickenSteak = Ingredient::create([
       'name' => 'Chicken Steak',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\chicken_cheesesteak.jpg',
       'is_flat' => 1
     ]);
     NutritionFact::create([
@@ -301,7 +301,7 @@ class MeatSeeder extends Seeder {
     $meatball = Ingredient::create([
       'name' => 'Meatball',
       'ingredient_type_id' => IngredientType::TYPE_MEAT,
-      'image_path' => '',
+      'image_path' => 'images\ingredients\default\meatballs.jpg',
       'is_flat' => 0
     ]);
     NutritionFact::create([

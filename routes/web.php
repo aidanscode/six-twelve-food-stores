@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\BuilderController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/menu', [HomeController::class, 'menu'])->name('home.menu');
@@ -15,4 +17,4 @@ Route::get('/coming_soon', [HomeController::class, 'comingSoon'])->name('home.co
 
 Route::get('/builder', [BuilderController::class, 'index'])->name('builder.index');
 
-Route::get('/ingredient/{id}/photo', [IngredientController::class, 'ingredient'])->name('ingredient.photo');
+Route::get('/ingredient/{id}/photo', [IngredientController::class, 'photo'])->name('ingredient.photo');
