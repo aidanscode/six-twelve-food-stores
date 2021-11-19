@@ -23,7 +23,11 @@
     <div class="col-12 col-md-4">
       <h5 class="fw-bold">Contact</h5>
       <h5 class="fw-normal">(856) 225-6800</h5>
-      <h5 class="fw-normal">Logo Logo Logo</h5>
+      <h2 class="fw-normal">
+        <a class="text-dark" href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+        <a class="text-dark" href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+        <a class="text-dark" href="https://www.twitch.tv/"><i class="bi bi-twitch"></i></a>
+      </h2>
     </div>
   </div>
   <div class="row">
