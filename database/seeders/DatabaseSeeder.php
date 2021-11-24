@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder {
 
   public function run() {
+    $this->call(UserSeeder::class);
+
     $this->call(IngredientTypesSeeder::class);
     $this->call(LocationSeeder::class);
     $this->call(TemperatureSeeder::class);

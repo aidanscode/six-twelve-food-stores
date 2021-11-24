@@ -14,10 +14,7 @@
   </head>
 
   <body>
-    @include('includes.nav.public')
-    @include('includes.messages')
     @yield('content')
-    @include('includes.footer')
 
     <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>

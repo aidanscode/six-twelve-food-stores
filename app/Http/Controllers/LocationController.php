@@ -28,10 +28,7 @@ class LocationController extends Controller {
     $location = Location::with('menu.nutritionFacts', 'menu.ingredientType')
       ->where('id', $id)
       ->firstOrFail();
-    $menu = $location
-      ->menu
-      ->map(fn(Ingredient $ingredient) => $ingredient->getApiStructuredData())
-      ->groupBy(fn(array $ingredient) => $ingredient['ingredient_type']['name']);
+    $menu = $location->getStructuredMenu();
 
     return response([
       'success' => true,
