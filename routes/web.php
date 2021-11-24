@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\LocationManagementController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\BuilderController;
 use App\Http\Controllers\HomeController;
@@ -49,5 +50,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/ingredient/{ingredient}', [LocationManagementController::class, 'editIngredient'])->name('ingredient.edit');
     Route::post('/ingredient/{ingredient}', [LocationManagementController::class, 'updateIngredient'])->name('ingredient.update');
     Route::delete('/ingredient/{ingredient}', [LocationManagementController::class, 'deleteIngredient'])->name('ingredient.delete');
+	
+	Route::get('/user', [UserController::class, 'index'])->name('user.index');
+	Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
+	Route::post('/user/{user}/edit', [UserController::class,'update'])->name('user.update');
   });
 });
