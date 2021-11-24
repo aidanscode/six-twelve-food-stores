@@ -5,6 +5,7 @@
 /public/js
 /public/fonts
 /storage/*.key
+/storage/images/ingredients/upload/*
 /vendor
 .env
 .env.backup
