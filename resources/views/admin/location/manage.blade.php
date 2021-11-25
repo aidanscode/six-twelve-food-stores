@@ -10,6 +10,7 @@
     </div>
     <div class="col-12 col-md-6">
       <a href="{{ route('location.edit', ['location' => $location]) }}" class="btn btn-dark float-md-end mt-2">Edit Location</a>
+      <a href="{{ route('ingredient.create') }}" class="btn btn-dark float-md-end mt-2 me-md-2">Add Ingredient</a>
     </div>
   </div>
 

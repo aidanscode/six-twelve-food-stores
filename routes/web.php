@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\IngredientManagementController;
 use App\Http\Controllers\Admin\LocationManagementController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\BuilderController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LocationController;
 
 /*
 ====================================
@@ -47,12 +47,14 @@ Route::prefix('admin')->group(function() {
     Route::get('/location/{location}/edit', [LocationManagementController::class, 'edit'])->name('location.edit');
     Route::post('/location/{location}/edit', [LocationManagementController::class, 'update'])->name('location.update');
 
-    Route::get('/ingredient/{ingredient}', [LocationManagementController::class, 'editIngredient'])->name('ingredient.edit');
-    Route::post('/ingredient/{ingredient}', [LocationManagementController::class, 'updateIngredient'])->name('ingredient.update');
-    Route::delete('/ingredient/{ingredient}', [LocationManagementController::class, 'deleteIngredient'])->name('ingredient.delete');
-	
-	Route::get('/user', [UserController::class, 'index'])->name('user.index');
-	Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
-	Route::post('/user/{user}/edit', [UserController::class,'update'])->name('user.update');
+    Route::get('/ingredient/create', [IngredientManagementController::class, 'create'])->name('ingredient.create');
+    Route::post('/ingredient/create', [IngredientManagementController::class, 'store'])->name('ingredient.store');
+    Route::get('/ingredient/{ingredient}', [IngredientManagementController::class, 'editIngredient'])->name('ingredient.edit');
+    Route::post('/ingredient/{ingredient}', [IngredientManagementController::class, 'updateIngredient'])->name('ingredient.update');
+    Route::delete('/ingredient/{ingredient}', [IngredientManagementController::class, 'deleteIngredient'])->name('ingredient.delete');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
+    Route::post('/user/{user}/edit', [UserController::class,'update'])->name('user.update');
   });
 });
