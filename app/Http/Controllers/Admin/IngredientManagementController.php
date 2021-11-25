@@ -22,24 +22,47 @@ class IngredientManagementController extends Controller {
   }
 
   public function store(Request $request) {
+	  
+	  //Validate ingredient type first before we use it to fill default values for type 1
+	  $request->validate([
+		'ingredient_type_id' => 'required|exists:' . IngredientType::class . ',id'
+	  ]);
+	  
+	if ($request['ingredient_type_id'] == 1){
+		$request['calories'] = 0;
+		$request['total_fat'] = 0;
+		$request['saturated_fat'] = 0;
+		$request['trans_fat'] = 0;
+		$request['cholesterol'] = 0;
+		$request['sodium'] = 0;
+		$request['carbohydrates'] = 0;
+		$request['dietary_fiber'] = 0;
+		$request['sugars'] = 0;
+		$request['protein'] = 0;
+		$request['vitamin_a'] = 0;
+		$request['vitamin_c'] = 0;
+		$request['calcium'] = 0;
+		$request['iron'] = 0;
+		
+	}
+	
     $request->validate([
       'name' => 'required|string|min:1',
-      'ingredient_type_id' => 'required|exists:' . IngredientType::class . ',id',
       'is_flat' => 'required|in:true,false',
-      'calories' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'total_fat' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'saturated_fat' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'trans_fat' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'cholesterol' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'sodium' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'carbohydrates' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'dietary_fiber' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'sugars' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'protein' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'vitamin_a' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'vitamin_c' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'calcium' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
-      'iron' => 'required_unless:ingredient_type_id,1|nullable|integer|min:0',
+      'calories' => 'required|integer|min:0',
+      'total_fat' => 'required|integer|min:0',
+      'saturated_fat' => 'required|integer|min:0',
+      'trans_fat' => 'required|integer|min:0',
+      'cholesterol' => 'required|integer|min:0',
+      'sodium' => 'required|integer|min:0',
+      'carbohydrates' => 'required|integer|min:0',
+      'dietary_fiber' => 'required|integer|min:0',
+      'sugars' => 'required|integer|min:0',
+      'protein' => 'required|integer|min:0',
+      'vitamin_a' => 'required|integer|min:0',
+      'vitamin_c' => 'required|integer|min:0',
+      'calcium' => 'required|integer|min:0',
+      'iron' => 'required|integer|min:0',
       'image' => 'required|file|mimetypes:image/png,image/jpeg',
       'location_id' => 'required|exists:' . Location::class . ',id'
     ]);
@@ -56,8 +79,8 @@ class IngredientManagementController extends Controller {
     $ingredient->ingredientLocations()->create([
       'location_id' => $request->input('location_id')
     ]);
-
-    $ingredient->nutritionFacts()->create(
+	
+	    $ingredient->nutritionFacts()->create(
       $request->only([
         'calories', 'total_fat', 'saturated_fat', 'trans_fat', 'cholesterol',
         'dietary_fiber', 'cholesterol', 'sodium', 'carbohydrates', 'dietary_fiber',
@@ -107,13 +130,15 @@ class IngredientManagementController extends Controller {
     $ingredient->is_flat = $request->input('is_flat') === 'true' ? true : false;
     $ingredient->save();
 
-    $nutritionFact = $ingredient->nutritionFacts;
-    $nutritionFact->fill($request->only([
-      'calories', 'total_fat', 'saturated_fat', 'trans_fat', 'cholesterol',
-      'dietary_fiber', 'cholesterol', 'sodium', 'carbohydrates', 'dietary_fiber',
-      'sugars', 'protein', 'vitamin_a', 'vitamin_c', 'calcium', 'iron'
-    ]));
-    $nutritionFact->save();
+
+	$nutritionFact = $ingredient->nutritionFacts;
+	$nutritionFact->fill($request->only([
+	  'calories', 'total_fat', 'saturated_fat', 'trans_fat', 'cholesterol',
+	  'dietary_fiber', 'cholesterol', 'sodium', 'carbohydrates', 'dietary_fiber',
+	  'sugars', 'protein', 'vitamin_a', 'vitamin_c', 'calcium', 'iron'
+	]));
+	$nutritionFact->save();
+
 
     $imageUpload = $request->file('image');
     if ($imageUpload) {
