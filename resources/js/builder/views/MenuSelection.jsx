@@ -12,6 +12,11 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
       newSelections[menuSectionName] = ingredient;
       return newSelections;
     });
+
+    forward();
+  }
+
+  const forward = () => {
     setSearchString('');
 
     if (menuStep + 1 === menuOrder.length) {
@@ -19,7 +24,7 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     } else {
       setMenuStep(menuStep + 1);
     }
-  }
+  };
 
   const goBack = () => {
     setMenuStep(menuStep - 1);
@@ -41,7 +46,7 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
     return baseClasses;
   }
 
-  const filteredIngredients = menu[menuSectionName]
+  const filteredIngredients = (menu[menuSectionName] ?? [])
     .filter(ingredient => {
       if (searchString.length)
         return ingredient.name.toLowerCase().includes(searchString.toLowerCase());
@@ -76,6 +81,10 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
           <h4>{ingredient.name}</h4>
         </div>
       })}
+
+      {(searchString || filteredIngredients.length) ? null : (
+        <button onClick={forward} className='btn btn-dark'>No ingredients in this section, click here to move forward</button>
+      )}
     </div>
   </>
 }
