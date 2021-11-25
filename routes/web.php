@@ -59,5 +59,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
     Route::post('/user/{user}/edit', [UserController::class,'update'])->name('user.update');
+	Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
   });
 });
