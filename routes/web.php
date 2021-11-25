@@ -43,15 +43,18 @@ Route::prefix('admin')->group(function() {
 
   Route::middleware('auth')->group(function() {
     Route::get('/', [LocationManagementController::class, 'index'])->name('location.index');
-    Route::get('/location/{location}', [LocationManagementController::class, 'manage'])->name('location.manage');
+    Route::get('/location/create', [LocationManagementController::class, 'create'])->name('location.create');
+    Route::post('/location/create', [LocationManagementController::class, 'store'])->name('location.store');
+    Route::get('/location/{location}', [LocationManagementController::class, 'manageMenu'])->name('location.manage');
     Route::get('/location/{location}/edit', [LocationManagementController::class, 'edit'])->name('location.edit');
     Route::post('/location/{location}/edit', [LocationManagementController::class, 'update'])->name('location.update');
+    Route::delete('/location/{location}', [LocationManagementController::class, 'delete'])->name('location.delete');
 
     Route::get('/ingredient/create', [IngredientManagementController::class, 'create'])->name('ingredient.create');
     Route::post('/ingredient/create', [IngredientManagementController::class, 'store'])->name('ingredient.store');
-    Route::get('/ingredient/{ingredient}', [IngredientManagementController::class, 'editIngredient'])->name('ingredient.edit');
-    Route::post('/ingredient/{ingredient}', [IngredientManagementController::class, 'updateIngredient'])->name('ingredient.update');
-    Route::delete('/ingredient/{ingredient}', [IngredientManagementController::class, 'deleteIngredient'])->name('ingredient.delete');
+    Route::get('/ingredient/{ingredient}', [IngredientManagementController::class, 'edit'])->name('ingredient.edit');
+    Route::post('/ingredient/{ingredient}', [IngredientManagementController::class, 'update'])->name('ingredient.update');
+    Route::delete('/ingredient/{ingredient}', [IngredientManagementController::class, 'delete'])->name('ingredient.delete');
 
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');

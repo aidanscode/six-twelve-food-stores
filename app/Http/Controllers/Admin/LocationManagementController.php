@@ -17,7 +17,25 @@ class LocationManagementController extends Controller {
     ]);
   }
 
-  public function manage(Location $location) {
+  public function create() {
+    return view('admin.location.create');
+  }
+
+  public function store(Request $request) {
+    $request->validate([
+      'name' => 'required|string|min:1',
+      'address' => 'required|string|min:1'
+    ]);
+
+    $location = Location::create([
+      'name' => $request->input('name'),
+      'address' => $request->input('address')
+    ]);
+
+    return redirect(route('location.manage', ['location' => $location]))->with('success', 'Successfully created new location!');
+  }
+
+  public function manageMenu(Location $location) {
     return view('admin.location.manage', [
       'location' => $location
     ]);
@@ -40,6 +58,12 @@ class LocationManagementController extends Controller {
     $location->save();
 
     return redirect(route('location.edit', ['location' => $location]))->with('success', 'Successfully updated location');
+  }
+
+  public function delete(Location $location) {
+    $location->fullyDelete();
+
+    return redirect(route('location.index'))->with('success', 'Successfully deleted location!');
   }
 
 }

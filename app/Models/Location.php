@@ -7,6 +7,10 @@ use Illuminate\Support\Collection;
 
 class Location extends Model {
 
+  protected $fillable = [
+    'name', 'address'
+  ];
+
   public function ingredientLocations() {
     return $this->hasMany(IngredientLocation::class);
   }
@@ -34,6 +38,22 @@ class Location extends Model {
     }
 
     return $structured;
+  }
+
+  public function fullyDelete() : void {
+    $this->load(
+      'ingredientLocations.ingredient.ingredientLocations',
+      'ingredientLocations.ingredient.nutritionFacts'
+    );
+    $ingredients = $this->ingredientLocations->pluck('ingredient');
+
+    $ingredients->each(function(Ingredient $ingredient) {
+      $ingredient->ingredientLocations()->where('location_id', $this->id)->delete();
+      if ($ingredient->ingredientLocations->count() === 1)
+        $ingredient->fullyDelete();
+    });
+
+    $this->delete();
   }
 
 }

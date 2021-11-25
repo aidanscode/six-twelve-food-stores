@@ -71,7 +71,7 @@ class IngredientManagementController extends Controller {
     return redirect(route('location.manage', ['location' => $location]))->with('success', 'Successfully added new ingredient!');
   }
 
-  public function editIngredient(Ingredient $ingredient) {
+  public function edit(Ingredient $ingredient) {
     $ingredientTypes = IngredientType::all();
 
     return view('admin.location.menu.edit_ingredient', [
@@ -80,7 +80,7 @@ class IngredientManagementController extends Controller {
     ]);
   }
 
-  public function updateIngredient(Request $request, Ingredient $ingredient) {
+  public function update(Request $request, Ingredient $ingredient) {
     $request->validate([
       'name' => 'required|string|min:1',
       'ingredient_type_id' => 'required|exists:' . IngredientType::class . ',id',
@@ -123,7 +123,7 @@ class IngredientManagementController extends Controller {
     return redirect(route('ingredient.edit', ['ingredient' => $ingredient]))->with('success', 'Successfully updated the ingredient information!');
   }
 
-  public function deleteIngredient(Ingredient $ingredient) {
+  public function delete(Ingredient $ingredient) {
     $ingredient->fullyDelete();
 
     return redirect(route('location.index'))->with('success', 'Successfully deleted ingredient!');

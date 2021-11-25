@@ -4,7 +4,14 @@
 
 @section('content')
 <div class="container mt-3">
-  <h1>Select a Location to Get Started!</h1>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h1>Select a Location to Get Started!</h1>
+    </div>
+    <div class="col-12 col-md-6">
+      <a href="{{ route('location.create') }}" class="btn btn-dark float-md-end">Create Location</a>
+    </div>
+  </div>
 
   <div class="row mt-5">
     @foreach($locations as $location)
