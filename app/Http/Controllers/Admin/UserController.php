@@ -20,6 +20,8 @@ class UserController extends Controller
 		]);
     }
 	
+	//Create user functions
+	
 	public function create() {
 		return view('admin.user.create');
 	}
@@ -28,7 +30,7 @@ class UserController extends Controller
 		$request->validate([
 			'email' => 'required|string|min:1',
 			'name' => 'required|string|min:1',
-			'password' => 'required|string|min:1'
+			'password' => 'required|confirmed|string|min:6'
 		]);
 		
 		$user = User::create([
@@ -41,6 +43,8 @@ class UserController extends Controller
 		return redirect(route('user.edit', ['user' => $user]))->with('success', 'Successfully created new user');
 	}
 	
+	// Edit user functions
+	
     public function edit(User $user)
     {
         return view('admin.user.edit', [
@@ -52,7 +56,7 @@ class UserController extends Controller
 		$request->validate([
 			'email' => 'required|string|min:1',
 			'name' => 'required|string|min:1',
-			'password' => 'required|string|min:1',
+			'password' => 'required|confirmed|string|min:6',
 		]);
 		
 		$user->email = $request->input('email');
@@ -64,11 +68,15 @@ class UserController extends Controller
 		
 	}
 	
+	// Delete user functions
+	
 	public function delete(User $user) {
     $user->delete();
 
     return redirect(route('user.index'))->with('success', 'Successfully deleted user!');
 	}
+	
+	//Change password functions
 	
 	public function change_password(User $user)
     {
@@ -79,7 +87,7 @@ class UserController extends Controller
 	
 	public function update_password(Request $request, User $user){
 		$request->validate([
-			'password' => 'required|string|min:1',
+			'password' => 'required|confirmed|string|min:6',
 		]);
 		
 		$user->password = Hash::make($request->input('password'));
