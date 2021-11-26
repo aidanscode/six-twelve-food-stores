@@ -62,5 +62,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
 	Route::delete('/user/{user}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('/user/{user}/change-password',[UserController::class,'change_password'])->name('user.change_password');
+    Route::post('/user/{user}/change-password', [UserController::class,'update_password'])->name('user.update_password');
   });
 });
