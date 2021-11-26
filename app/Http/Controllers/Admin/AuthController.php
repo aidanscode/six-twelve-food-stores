@@ -32,11 +32,8 @@ class AuthController extends Controller {
       return back()->withErrors([$errorMessage]);
     }
 
-    Auth::login($user);
+	Auth::login($user);
 	
-	if ($user->force_password_reset == 1) {
-		return redirect(route('user.change_password', ['user' => $user]));
-	}
     return redirect(route('location.index'))->with('success', 'Successfully logged in');
   }
 
