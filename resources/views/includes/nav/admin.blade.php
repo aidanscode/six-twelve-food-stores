@@ -11,5 +11,15 @@
         <a class="nav-link" href="{{ route('user.index') }}">User Management</a>
       </div>
     </div>
+	
+	<div class="navbar-nav navbar-right">
+		<a class="btn btn-outline-light" href="{{ route('admin.auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+			Logout
+		</a>
+		<form id="logout-form" action="{{ route('admin.auth.logout') }}" method="POST" style="display: none;">
+			@csrf
+		</form>
+	</div>
+	
   </div>
 </nav>
