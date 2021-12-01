@@ -7,8 +7,8 @@ use Illuminate\Http\UploadedFile;
 use Storage;
 class Ingredient extends Model {
 
-  const DEFAULT_IMAGE_DIR = 'images\ingredients\default';
-  const CUSTOM_IMAGE_DIR = 'images\ingredients\upload';
+  const DEFAULT_IMAGE_DIR = 'images/ingredients/default';
+  const CUSTOM_IMAGE_DIR = 'images/ingredients/upload';
 
   public function nutritionFacts() {
     return $this->hasOne(NutritionFact::class, 'ingredient_id');
