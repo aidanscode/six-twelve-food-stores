@@ -11,9 +11,9 @@ class BreadTypeSeeder extends Seeder {
 
   public function run() {
     $sizes = collect([
-      ['name' => 'Small (8 in)', 'multiplier' => 2/3, 'path' => 'images\ingredients\default\bread_small.jpg'],
-      ['name' => 'Medium (12 in)', 'multiplier' => 1, 'path' => 'images\ingredients\default\bread_medium.jpg'],
-      ['name' => 'Large (8 in)', 'multiplier' => 3/2, 'path' => 'images\ingredients\default\bread_large.jpg'],
+      ['name' => 'Small (8 in)', 'multiplier' => 2/3, 'path' => 'images/ingredients/default/bread_small.jpg'],
+      ['name' => 'Medium (12 in)', 'multiplier' => 1, 'path' => 'images/ingredients/default/bread_medium.jpg'],
+      ['name' => 'Large (8 in)', 'multiplier' => 3/2, 'path' => 'images/ingredients/default/bread_large.jpg'],
     ]);
 
     //White breads
