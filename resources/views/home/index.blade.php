@@ -91,9 +91,9 @@
       <img class="img-fluid p-0" src="{{ asset('images\pan.png') }}" />
       <div class="hero-text text-center">
         <h2 class="text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          We pride ourselves on top tier customer service! All customers are invired to contact our us with questions, feedback, and issues.
         </h2>
-        <button class="btn btn-light btn-lg">Contact</button>
+        <a href="{{ route('home.contact') }}" class="btn btn-light btn-lg">Contact</a>
       </div>
     </div>
   </div>

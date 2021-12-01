@@ -21,6 +21,6 @@
 <p class="m-0">Large (18 in) <span class="float-end">$5.89 - $6.69</span></p>
 
 <div class="mt-5">
-  <button class="btn btn-dark btn-lg me-3">Full Menu</button>
-  <button class="btn btn-dark btn-lg">Meal Builder</button>
+  <a href="{{ route('home.menu') }}" class="btn btn-dark btn-lg me-3">Full Menu</a>
+  <a href="{{ route('builder.index') }}" class="btn btn-dark btn-lg">Meal Builder</a>
 </div>
