@@ -8,7 +8,7 @@
   <div class="row section mt-4">
     <div class="col-12 col-md-6 offset-md-3">
       <h1 class="text-center fw-bold">
-        The new Meal Builder is here. Craft your perfect sandwich, with only the freshest ingredients of course.
+        The new Meal Builder is here. Craft your perfect sandwich with only the freshest ingredients.
       </h1>
     </div>
   </div>
