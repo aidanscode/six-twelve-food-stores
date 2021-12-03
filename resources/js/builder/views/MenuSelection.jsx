@@ -19,11 +19,12 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
   const forward = () => {
     setSearchString('');
 
-    if (menuStep + 1 === menuOrder.length) {
+    if (menuStep === menuOrder.length) {
       done();
     } else {
       setMenuStep(menuStep + 1);
     }
+
   };
 
   const goBack = () => {
@@ -72,7 +73,9 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
       </div>
     </div>
 
+	{(menuStep === menuOrder.length) ? null : (
     <h5>Select a {menuSectionName}</h5>
+	)}
 
     <div className='row mt-3'>
       {filteredIngredients.map((ingredient) => {
@@ -81,10 +84,20 @@ function MenuSelection({ menu, menuSelections, setMenuSelections, done }) {
           <h4>{ingredient.name}</h4>
         </div>
       })}
+	  
+	  {(menuStep < menuOrder.length) ? null : (
+		<>
+		<div className='text-center'>
+		<h4>You're almost done! <br /> Please confirm your selection below.</h4>
+        <button onClick={forward} className='btn btn-dark'>Confirm</button>
+		</div>
+		</>
+      )}
 
-      {(searchString || filteredIngredients.length) ? null : (
+      {(searchString || filteredIngredients.length || (menuStep === menuOrder.length)) ? null : (
         <button onClick={forward} className='btn btn-dark'>No ingredients in this section, click here to move forward</button>
       )}
+	  
     </div>
   </>
 }

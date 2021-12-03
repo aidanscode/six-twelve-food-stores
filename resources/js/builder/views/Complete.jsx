@@ -5,8 +5,6 @@ function Complete({ restart }) {
     <h4>
       <span>
         Your meal is now complete!
-        <br />
-        Please confirm your selection.
       </span>
     </h4>
     <button className='btn btn-dark' onClick={restart}>Click Here to Restart</button>
