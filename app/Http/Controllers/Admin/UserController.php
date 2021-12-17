@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Hash;
 
@@ -40,14 +41,14 @@ class UserController extends Controller {
 
   public function update(Request $request, User $user) {
     $request->validate([
-      'email' => 'required|string|min:1',
-      'name' => 'required|string|min:1',
-      'password' => 'required|confirmed|string|min:6',
+      'email' => [
+        'required', 'email', Rule::unique('users', 'email')->ignore($user)
+      ],
+      'name' => 'required|string|min:1'
     ]);
 
     $user->email = $request->input('email');
     $user->name = $request->input('name');
-    $user->password = Hash::make($request->input('password'));
     $user->save();
 
     return redirect(route('user.edit', ['user' => $user]))->with('success', 'Successfully updated user');
@@ -57,6 +58,12 @@ class UserController extends Controller {
     $user->delete();
 
     return redirect(route('user.index'))->with('success', 'Successfully deleted user!');
+  }
+
+  public function resetPassword(User $user) {
+    $user->resetUserPassword();
+
+    return back()->with('success', 'Successfully reset user password.');
   }
 
   public function change_password(User $user) {

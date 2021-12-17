@@ -39,8 +39,6 @@ Route::prefix('admin')->group(function() {
     Route::get('login', [AuthController::class, 'viewLogin'])->name('admin.auth.login')->middleware('guest');
     Route::post('login', [AuthController::class, 'login'])->name('admin.auth.login.submit')->middleware('guest');
     Route::post('logout', [AuthController::class, 'logout'])->name('admin.auth.logout')->middleware('auth');
-	
-	
   });
 
   Route::middleware(['auth','ensure_pass_reset'])->group(function() {
@@ -61,10 +59,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
     Route::post('/user/{user}/edit', [UserController::class,'update'])->name('user.update');
-	Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
-	Route::delete('/user/{user}', [UserController::class, 'delete'])->name('user.delete');
-    Route::get('/user/{user}/change-password',[UserController::class,'change_password'])->name('user.change_password')->withoutMiddleware('ensure_pass_reset');
+    Route::delete('/user/{user}', [UserController::class, 'delete'])->name('user.delete');
+    Route::post('/user/{user}/reset-password', [UserController::class, 'resetPassword'])->name('user.reset_password');
+
+    Route::get('/user/{user}/change-password', [UserController::class,'change_password'])->name('user.change_password')->withoutMiddleware('ensure_pass_reset');
     Route::post('/user/{user}/change-password', [UserController::class,'update_password'])->name('user.update_password')->withoutMiddleware('ensure_pass_reset');
   });
 });

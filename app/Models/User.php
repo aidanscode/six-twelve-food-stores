@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Str;
 
+use App\Mail\ResetPasswordMail;
 use App\Events\NewUserEvent;
 
 class User extends Authenticatable {
@@ -18,8 +20,12 @@ class User extends Authenticatable {
   protected $fillable = ['name', 'email', 'password', 'force_password_reset'];
   protected $hidden = ['password', 'remember_token'];
 
+  private static function getNewRandomPassword() : string {
+    return Str::random(16);
+  }
+
   public static function createNewUser(string $email, string $name) : User {
-    $defaultPassword = Str::random(16);
+    $defaultPassword = self::getNewRandomPassword();
 
     $user = User::create([
       'name' => $name,
@@ -30,6 +36,16 @@ class User extends Authenticatable {
     event(new NewUserEvent($user, $defaultPassword));
 
     return $user;
+  }
+
+  public function resetUserPassword() : void {
+    $newPassword = self::getNewRandomPassword();
+
+    $this->password = Hash::make($newPassword);
+    $this->force_password_reset = 1;
+    $this->save();
+
+    Mail::to($this)->send(new ResetPasswordMail($this, $newPassword));
   }
 
 }
