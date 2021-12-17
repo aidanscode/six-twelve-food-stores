@@ -11,8 +11,11 @@
         <a class="nav-link" href="{{ route('user.index') }}">User Management</a>
       </div>
     </div>
-	
+
 	<div class="navbar-nav navbar-right">
+    <span class="navbar-text px-3">
+      Logged in as {{ auth()->user()->name }}
+    </span>
 		<a class="btn btn-outline-light" href="{{ route('admin.auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 			Logout
 		</a>
@@ -20,6 +23,6 @@
 			@csrf
 		</form>
 	</div>
-	
+
   </div>
 </nav>
