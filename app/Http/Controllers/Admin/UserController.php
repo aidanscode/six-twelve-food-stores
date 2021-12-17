@@ -24,18 +24,11 @@ class UserController extends Controller {
 
   public function store(Request $request) {
     $request->validate([
-      'email' => 'required|string|min:1',
-      'name' => 'required|string|min:1',
-      'password' => 'required|confirmed|string|min:6'
+      'email' => 'required|email|unique:' . User::class . ',email',
+      'name' => 'required|string|min:1'
     ]);
 
-    $user = User::create([
-      'name' => $request->input('name'),
-      'email' => $request->input('email'),
-      'password' => Hash::make($request->input('password')),
-      'force_password_reset' => 1
-    ]);
-
+    $user = User::createNewUser($request->input('email'), $request->input('name'));
     return redirect(route('user.edit', ['user' => $user]))->with('success', 'Successfully created new user');
   }
 
@@ -68,7 +61,7 @@ class UserController extends Controller {
 
   public function change_password(User $user) {
     return view('admin.user.change_password', [
-    'user' => $user
+      'user' => $user
     ]);
   }
 
@@ -83,6 +76,5 @@ class UserController extends Controller {
 
     return redirect(route('location.index', ['user' => $user]))->with('success', 'Successfully updated password');
   }
-
 
 }
